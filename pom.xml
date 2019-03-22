@@ -18,6 +18,7 @@
     <modules>
         <module>learning</module>
         <module>security</module>
+        <module>zk_provider</module>
     </modules>
 
     <properties>

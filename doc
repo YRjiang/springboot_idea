@@ -1,0 +1,28 @@
+
+
+
+1.mybatis
+
+2.security
+
+3.OAuth
+使用oauth2保护你的应用，可以分为简易的分为三个步骤
+
+    配置资源服务器
+    配置认证服务器
+    配置spring security
+
+
+4.elasticsearch 全文搜索引擎
+    spring boot 默认使用 springData Elasticsearch 模块进行操作
+    spring boot 默认支持两种技术来和 ES 交互;
+        1.jest 默认不生效，需要导入 jest 工具包 (io.searchbox.client.JestClient)
+        2.springData Elasticsearch
+            1. Client / clusterNodes (节点信息) / clusterName
+            2. ElasticsearchTemplate 操作 ES
+            3. 编写 ElasticsearchRepository 子接口操作 ES
+
+
+
+
+

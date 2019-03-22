@@ -37,6 +37,8 @@ public class DruidConfig {
         return new DruidDataSource();
     }
 
+    //配置Druid的监控
+    //1、配置一个管理后台的Servlet
     @Bean
     public ServletRegistrationBean druidServlet() {
         log.info("init Druid Servlet Configuration ");
@@ -44,6 +46,7 @@ public class DruidConfig {
         servletRegistrationBean.setServlet(new StatViewServlet());
         servletRegistrationBean.addUrlMappings("/druid/*");
         Map<String, String> initParameters = new HashMap<>();
+        // 添加控制台管理用户
         initParameters.put("loginUsername", userName);// 用户名
         initParameters.put("loginPassword", password);// 密码
         initParameters.put("resetEnable", "false");// 禁用HTML页面上的“Reset All”功能
@@ -53,6 +56,7 @@ public class DruidConfig {
         return servletRegistrationBean;
     }
 
+    //2、配置一个web监控的filter
     @Bean
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();

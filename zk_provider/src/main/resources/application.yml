@@ -1,0 +1,8 @@
+dubbo:
+  application:
+    # 当前应用的名字
+    name: zk_provider
+  registry:
+    address: zookeeper://192.168.189.1:2181
+  scan:
+    base-package: com.example.zk_provider.service

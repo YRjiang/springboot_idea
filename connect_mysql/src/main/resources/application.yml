@@ -35,6 +35,43 @@ spring:
         hibernate:
             ddl-auto: update
         show-sql: true
+        # 解决懒加载时加载完以后Session关闭导致的No Session异常
+        open-in-view: true
+    main:
+        # 允许重写
+        allow-bean-definition-overriding: true
+    # REDIS (RedisProperties)
+    redis:
+        # Redis数据库索引（默认为0）
+        database: 1
+        # Redis服务器地址
+        host: 192.168.189.1
+        # Redis服务器连接端口
+        port: 6379
+        # Redis服务器连接密码（默认为空）
+        password:
+        # 连接超时时间（毫秒）
+        #timeout: 100ms
+    # rabbitmq
+    rabbitmq:
+        host: 192.168.189.1 #127.0.0.1
+        port: 5672
+        username: guest
+        password: guest
+        #virtual-host: /
+    # elasticsearch  全文搜索引擎
+    data:
+        elasticsearch:
+            cluster-name: docker-cluster
+            cluster-nodes: 192.168.189.1:9300
+            repositories:
+                enabled: true
+
+
+# spring boot Logging 配置
+#logging:
+#    level:
+#        com.example.connect_mysql.mapper: DEBUG
 
 server:
     port: 8011
@@ -46,11 +83,23 @@ server:
 mybatis:
     typeAliasesPackage: com.example.connect_mysql.model
     mapperLocations: classpath:mapper/*.xml
+    # 开启 mybatis 驼峰命名匹配规则
+    configuration:
+        map-underscore-to-camel-case: true
+        # 开启控制台sql语句打印
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+# 配置 localhost:8011/druid/weburi.html 控制台管理用户
 druid:
     allow: #允许登陆的IP地址
         ip: 127.0.0.1
     login: #登陆的账户密码
-        user_name: root
-        password: 123123
+        user_name: admin
+        password: admin
+
+
+
+
+
+
 

@@ -1,0 +1,6 @@
+dubbo:
+  application:
+    # 当前应用的名字
+    name: zk_consume
+  registry:
+    address: zookeeper://192.168.189.1:2181
