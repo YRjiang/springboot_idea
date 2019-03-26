@@ -19,6 +19,10 @@
         <module>learning</module>
         <module>security</module>
         <module>zk_provider</module>
+        <module>eureka-service</module>
+        <module>cloud-provider</module>
+        <module>cloud-api</module>
+        <module>cloud-consume-feign</module>
     </modules>
 
     <properties>

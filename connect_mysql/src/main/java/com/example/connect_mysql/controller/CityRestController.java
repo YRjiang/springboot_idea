@@ -56,7 +56,7 @@ public class CityRestController {
         return city;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/abc")
     public String index(){
         return "首页";
     }

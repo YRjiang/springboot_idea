@@ -60,12 +60,12 @@ spring:
         password: guest
         #virtual-host: /
     # elasticsearch  全文搜索引擎
-    data:
-        elasticsearch:
-            cluster-name: docker-cluster
-            cluster-nodes: 192.168.189.1:9300
-            repositories:
-                enabled: true
+    #data:
+    #    elasticsearch:
+    #        cluster-name: docker-cluster
+    #        cluster-nodes: 192.168.189.1:9300
+    #        repositories:
+    #            enabled: true
 
 
 # spring boot Logging 配置
@@ -96,6 +96,9 @@ druid:
     login: #登陆的账户密码
         user_name: admin
         password: admin
+
+
+
 
 
 
