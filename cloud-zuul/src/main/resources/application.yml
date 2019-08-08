@@ -1,0 +1,28 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-zuul-gateway # 对外暴露的统一 服务实例名 (配置多个 provider 时，需要保持一致，不可修改)
+eureka:
+  instance:
+    prefer-ip-address: true # 使用服务 ip地址 进行注册服务
+    instance-id: cloud-zuul-9527 # 服务名称信息   -- Eureka 界面里 Status 下的名称
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/    # 注册到两个Eureka中，实现高可用
+      #defaultZone: http://localhost:8761/eureka/
+
+# 网关地址映射
+zuul:
+  #prefix: /atguigu # 统一前缀
+  ignored-services: cloud-provider     # 忽略服务名  忽略多个 "*"
+  routes:
+    myCity.serviceId: cloud-provider # 服务名 地址映射
+    myCity.path: /mycity/**
+
+# actuator 监管服务 /actuator/info  提示信息
+info:
+  app.name: cloud-zuul-gateway
+  company.name: yusys.com.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
