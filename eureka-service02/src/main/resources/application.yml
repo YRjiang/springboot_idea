@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: eureka-service # eureka 实例的主机名
+  client:
+    register-with-eureka: true # 把自己注册到 eureka 服务上
+    fetch-registry: true # 从 eureka 服务上获取服务的注册信息
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+    # 以上是高可用的 Eureka 配置
+    # 以下是单个 Eureka 配置
+    # 主要区别是: 高可用Eureka 启动了两个Eureka服务注册中心，相互注册
+
+    #register-with-eureka: false # 把自己注册到 eureka 服务上
+    #fetch-registry: false # 从 eureka 服务上获取服务的注册信息
+    #service-url:
+    #      defaultZone: http://localhost:8761/eureka/

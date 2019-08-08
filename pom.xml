@@ -22,7 +22,10 @@
         <module>eureka-service</module>
         <module>cloud-provider</module>
         <module>cloud-api</module>
-        <module>cloud-consume-feign</module>
+        <module>cloud-consume-feign02</module>
+        <module>cloud-zuul</module>
+        <module>security-oAuth2</module>
+        <module>security-resource</module>
     </modules>
 
     <properties>

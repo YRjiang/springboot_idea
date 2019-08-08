@@ -1,14 +1,8 @@
 server:
   port: 8201
-
 spring:
   application:
     name: cloud-consume-feign
-
-feign:
-  hystrix:
-    enabled: true
-
 eureka:
   instance:
     prefer-ip-address: true # 使用服务 ip地址 进行注册服务

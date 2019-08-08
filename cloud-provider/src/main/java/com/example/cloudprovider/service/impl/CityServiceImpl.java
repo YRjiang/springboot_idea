@@ -8,16 +8,19 @@ public class CityServiceImpl implements ICityService {
 
     @Override
     public String get() {
-        return "provider get @@@";
+        System.out.print("provider get @@@  ---  api");
+        return "provider get @@@  ---  api";
     }
 
     @Override
     public String list() {
-        return "provider list @@@";
+        System.out.print("provider list @@@  ---  api");
+        return "provider list @@@  ---  api";
     }
 
     @Override
     public String add() {
-        return "provider add @@@";
+        System.out.print("provider add @@@  ---  api");
+        return "provider add @@@  ---  api";
     }
 }

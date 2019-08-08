@@ -34,6 +34,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--引入 cloud-api 子模块-->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>cloud-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>    <!--这个必填-->
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

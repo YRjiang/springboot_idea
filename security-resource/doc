@@ -1,0 +1,9 @@
+
+
+1.  springboot 整合 mybatis Plus
+        pom.xml    -         mybatis-plus-boot-starter 、 mybatis-plus-generator (代码生成器)
+        代码生成器实现        com.example.security.utils.CodeGenerator
+        application.yml      mybatis-plus 配置
+        mybatisPlus 分页     com.example.security.config.MybatisPlusConfig
+                             com.example.security.config.MetaObjectHandlerConfig
+

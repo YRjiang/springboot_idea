@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-api" />
+        <module name="cloud-consume" />
+        <module name="cloud-consume-feign" />
+        <module name="cloud-consume-feign02" />
+        <module name="cloud-hystrix" />
+        <module name="cloud-provider" />
+        <module name="cloud-provider02" />
+        <module name="cloud-zuul" />
+        <module name="connect_mysql" />
+        <module name="eureka-service" />
+        <module name="eureka-service02" />
+        <module name="learning" />
+        <module name="security" />
+        <module name="securityoAuth2" />
+        <module name="securityresource" />
+        <module name="spring_jpa" />
+        <module name="zk_consume" />
+        <module name="zk_provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-service03" target="1.8" />
+      <module name="spring-security-oauth2-server" target="1.8" />
+      <module name="spring_jpa" target="1.8" />
+      <module name="swagger2" target="1.8" />
+      <module name="webapp" target="1.7" />
+      <module name="yang" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
