@@ -7,3 +7,8 @@
         mybatisPlus 分页     com.example.security.config.MybatisPlusConfig
                              com.example.security.config.MetaObjectHandlerConfig
 
+2.  oauth2 资源服务器
+        pom.xml              spring-cloud-starter-oauth2
+        配置类                config.ResourceServerConfiguration.java
+        application.yml       security.oauth2  配置
+                              server.servlet.context-path: /contents   (根地址)

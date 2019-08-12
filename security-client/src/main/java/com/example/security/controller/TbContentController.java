@@ -6,11 +6,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.security.entity.TbContent;
 import com.example.security.service.ITbContentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * <p>
@@ -22,17 +22,19 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/tbContent")
+@Api(value="用户controller",tags={"用户操作接口"})
 public class TbContentController {
 
     @Autowired
     ITbContentService tbContentService;
 
-    @PostMapping("/getEntity/{id}")
+    @ApiOperation(value="获取用户列表", notes="获取用户列表")
+    @GetMapping("/getEntity/{id}")
     public ResponseEntity getEntity(@PathVariable Integer id) {
         TbContent content = tbContentService.getById(id);
-        List<TbContent> contentList = tbContentService.list();
+        // List<TbContent> contentList = tbContentService.list();
         System.out.println("id: " + id + ", content: " + content);
-        System.out.println("contentList: " + contentList);
+        // System.out.println("contentList: " + contentList);
         return ResponseEntity.ok(content);
     }
 
@@ -44,4 +46,24 @@ public class TbContentController {
         System.out.println(contentIPage.toString());
         return ResponseEntity.ok(contentIPage);
     }
+
+    @PostMapping("/insertContent")
+    public void insertContent(TbContent tbContent) {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(tbContent.getContent());
+        sb.append(tbContent.getCategoryId());
+
+        sb.append(tbContent.getPic2());
+
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("");
+
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+
+
+    }
+
 }

@@ -1,0 +1,17 @@
+
+1. swagger2
+                   pom        springfox-swagger2 、springfox-swagger-ui    (注意防止与springboot 的版本冲突)
+                   config     Swagger2Config / WebMvcConfig    (配置类)
+                   application.yml    spring.profiles.active: dev    (配置开启关闭, 结合 Swagger2Config 中 @Profile)
+                   controller    开启 swagger2 需要的注解
+                   swagger2   登入界面地址    http://localhost:8082/swagger-ui.html
+
+2.
+
+
+
+
+
+
+
+

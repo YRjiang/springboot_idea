@@ -26,6 +26,7 @@
         <module>cloud-zuul</module>
         <module>security-oAuth2</module>
         <module>security-resource</module>
+        <module>security-client</module>
     </modules>
 
     <properties>
