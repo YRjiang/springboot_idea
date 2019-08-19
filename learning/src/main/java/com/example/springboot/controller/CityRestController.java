@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,4 +97,10 @@ public class CityRestController {
         return cityService.findCityByName(cityName);
     }
 
+    @RequestMapping(value="save.do", method=RequestMethod.POST)
+    @ResponseBody
+    private String doSave(@RequestParam("userName") String userName, @RequestParam("age") Integer age, HttpSession session){
+        System.out.print("username: " + userName + ", age: " + age + "session: " + session);
+        return "成功";
+    }
 }

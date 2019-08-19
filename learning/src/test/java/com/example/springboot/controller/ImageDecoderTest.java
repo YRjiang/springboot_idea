@@ -10,11 +10,11 @@ public class ImageDecoderTest {
 
     @Test
     public void baseTest(){
-        //加密
+        /*//加密
         String basestr = imageChangeBase64("D://1.jpg");
         System.out.println(basestr);
         //解密
-        base64ChangeImage(basestr,"D://2.jpg");
+        base64ChangeImage(basestr,"D://2.jpg");*/
     }
 
     /**

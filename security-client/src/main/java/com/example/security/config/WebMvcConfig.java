@@ -23,6 +23,16 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
      */
 
 
+    /**
+     *
+     * swagger-ui.html 位于 springfox-swagger-ui jar 包中的META-INF/resources/目录下，
+     * 项目编译后 swagger-ui.html 将添加到 classpath 的/META-INF/resources/下，
+     * 所以添加 mapping="/webjars/**" 可通过localhost:端口号/项目名/swagger-ui.html打开SwaggerUI
+     *
+     * @param registry
+     */
+
+
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")

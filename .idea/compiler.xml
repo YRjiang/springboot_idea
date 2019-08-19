@@ -18,8 +18,10 @@
         <module name="connect_mysql" />
         <module name="eureka-service" />
         <module name="eureka-service02" />
+        <module name="httpclientutil" />
         <module name="learning" />
         <module name="security" />
+        <module name="securityclient" />
         <module name="securityoAuth2" />
         <module name="securityresource" />
         <module name="spring_jpa" />
@@ -29,6 +31,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eureka-service03" target="1.8" />
+      <module name="learning (1)" target="1.8" />
       <module name="spring-security-oauth2-server" target="1.8" />
       <module name="spring_jpa" target="1.8" />
       <module name="swagger2" target="1.8" />

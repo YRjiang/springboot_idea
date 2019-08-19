@@ -1,5 +1,13 @@
 package com.arronlong.httpclientutil.test;
 
+import com.arronlong.httpclientutil.HttpClientUtil;
+import com.arronlong.httpclientutil.builder.HCB;
+import com.arronlong.httpclientutil.common.HttpConfig;
+import com.arronlong.httpclientutil.common.HttpHeader;
+import com.arronlong.httpclientutil.exception.HttpProcessException;
+import org.apache.http.Header;
+import org.apache.http.client.HttpClient;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,15 +16,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.http.Header;
-import org.apache.http.client.HttpClient;
-
-import com.arronlong.httpclientutil.HttpClientUtil;
-import com.arronlong.httpclientutil.builder.HCB;
-import com.arronlong.httpclientutil.common.HttpConfig;
-import com.arronlong.httpclientutil.common.HttpHeader;
-import com.arronlong.httpclientutil.exception.HttpProcessException;
-
 /** 
  * 
  * @author arron
@@ -24,7 +23,7 @@ import com.arronlong.httpclientutil.exception.HttpProcessException;
  * @version 1.0 
  */
 public class HttpClientTest {
-	
+
 	public static void testOne() throws HttpProcessException{
 		
 		System.out.println("--------简单方式调用（默认post）--------");
@@ -32,11 +31,11 @@ public class HttpClientTest {
 		HttpConfig  config = HttpConfig.custom();
 		//简单调用
 		String resp = HttpClientUtil.get(config.url(url));
-
 		System.out.println("请求结果内容长度："+ resp.length());
-		
 		System.out.println("\n#################################\n");
-		
+
+
+
 		System.out.println("--------加入header设置--------");
 		url="http://blog.csdn.net/xiaoxian8023";
 		//设置header信息
@@ -47,14 +46,14 @@ public class HttpClientTest {
 
 		System.out.println("\n#################################\n");
 		
-		System.out.println("--------代理设置（绕过证书验证）-------");
+		/*System.out.println("--------代理设置（绕过证书验证）-------");
 		url="https://www.facebook.com/";
 		HttpClient client= HCB.custom().timeout(10000).proxy("127.0.0.1", 8087).ssl().build();//采用默认方式（绕过证书验证）
 		//执行请求
 		resp = HttpClientUtil.get(config.client(client));
 		System.out.println("请求结果内容长度："+ resp.length());
 
-		System.out.println("\n#################################\n");
+		System.out.println("\n#################################\n");*/
 
 //		System.out.println("--------代理设置（自签名证书验证）+header+get方式-------");
 //		url = "https://sso.tgb.com:8443/cas/login";
@@ -63,19 +62,20 @@ public class HttpClientTest {
 //		//执行请求
 //		resp = CopyOfHttpClientUtil.get(config.method(HttpMethods.GET));
 //		System.out.println("请求结果内容长度："+ resp.length());
-		try {
-			System.out.println("--------下载测试-------");
-			url="http://ss.bdimg.com/static/superman/img/logo/logo_white_fe6da1ec.png";
-			FileOutputStream out = new FileOutputStream(new File("d://aaa//000.png"));
-			HttpClientUtil.down(HttpConfig.custom().url(url).out(out));
-			out.flush();
-			out.close();
-			System.out.println("--------下载测试+代理-------");
+
+			try {
+				System.out.println("--------下载测试-------");
+				url="http://ss.bdimg.com/static/superman/img/logo/logo_white_fe6da1ec.png";
+				FileOutputStream out = new FileOutputStream(new File("d:\\000.png"));
+				HttpClientUtil.down(HttpConfig.custom().url(url).out(out));
+				out.flush();
+				out.close();
+			/*System.out.println("--------下载测试+代理-------");
 			
 			out = new FileOutputStream(new File("d://aaa//001.png"));
 			HttpClientUtil.down(HttpConfig.custom().client(client).url(url).out(out));
 			out.flush();
-			out.close();
+			out.close();*/
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -163,6 +163,7 @@ public class HttpClientTest {
 	        public GetRunnable(CountDownLatch countDownLatch){
 	            this.countDownLatch = countDownLatch;
 	        }
+
 	        @Override
 	        public void run() {
 	            try {
@@ -188,11 +189,12 @@ public class HttpClientTest {
 	    }  
 	
 	public static void main(String[] args) throws Exception {
-		File file = new File("d://aaa");
+		/*File file = new File("D:\\");
 		if(!file.exists() && file.isDirectory()){
 			file.mkdir();
-		}
-//		testOne();
-		testMutilTask();
+		}*/
+
+		testOne();
+		//testMutilTask();
 	}
 }

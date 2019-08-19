@@ -23,6 +23,7 @@ public class UserInfoController {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    @ResponseBody
     public String insertUserInfo(@RequestParam(value = "username", required = true) @RequestBody String username,
                                  @RequestParam(value = "mobile", required = true) @RequestBody String mobile){
         System.out.print("调用 /userinfo/insert");
@@ -31,7 +32,8 @@ public class UserInfoController {
         userInfo.setMobile(mobile);
         userInfoService.insertUserInfo(userInfo);
 
-        return "/demo/add";
+        return userInfo.toString();
+        //return "/demo/add";
     }
 
     public List<UserInfo> findAllUserInfo(){

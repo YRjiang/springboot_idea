@@ -1,0 +1,120 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>测试例子</title>
+
+    <!-- 使用bootstrapValidator必须引入的js和css文件 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bootstrapValidator/css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrapValidator/js/bootstrapValidator.js"></script>
+
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+
+    <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=".."
+    <script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+
+    <!-- 一个提示控件 -->
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <script type="text/javascript" src="js/toastr.min.js"></script>
+    <script type="text/javascript" src="js/toastrinit.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+
+            /**
+             *下面就是bootstrapValidator的初始化
+             *定义你需要的哪些表单需要验证，验证什么内容
+             **/
+            $("#defaultForm").bootstrapValidator({
+                feedbackIcons: {//这里是用来对应三种不同状态时，在输入框后面添加的图标
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields:{//哪些字段需要验证，和html中的输入框，下拉框等等表单name属性所对应。
+                    username:{
+                        validators:{//从这里也可以容易的看出可以有多个验证信息
+                            notEmpty:{//非空验证
+                                message:"请输入用户名！！！" //提示信息，当你不写这里时它会自动的调用自带的提示信息，默认是英文，可导入language下的中文JS文件
+                            },
+                            stringLength: {//长度限制（中文字符也算一个）
+                                min: 4,
+                                max: 16,
+                                message: "用户名长度只能在4到16位之间！！！"
+                            }
+                        }
+                    },
+                    password:{
+                        validators:{
+                            notEmpty:{
+                                message:"请输入密码！！！"
+                            }
+                        }
+                    },
+                    confirmPassword:{
+                        validators:{
+                            notEmpty:{
+                                message:"请输入确认密码！！！"
+                            },
+                            identical: {//用来判断制定的字段和当前字段一致与否
+                                field: 'password',
+                                message: "两次输入的密码不一致！！！"
+                            }
+                        }
+                    }
+                }
+            });
+
+            //点击提交按钮时
+            $("#btn_submit").click(function(){
+                $("#defaultForm").data('bootstrapValidator').validate();//相当于触发一次所有的验证
+                if($("#defaultForm").data('bootstrapValidator').isValid()){//判断验证是否已经通过
+                    alert("kkkkkkk")
+                    toastr.success("验证通过！！！");//提示成功信息
+                    return false;
+                }else{
+                    toastr.error("验证失败！！！");
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <form id="defaultForm" class="form-horizontal">
+        <div class="col-sm-offset-2" style="margin-top: 200px;">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">用户名:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  name="username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">密码:</label>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control"  name="password" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">确认密码:</label>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control"  name="confirmPassword" />
+                </div>
+            </div>
+            <div class="form-group ">
+                <button id="btn_submit" type="submit" class="btn btn-sm btn-primary col-sm-offset-4">提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

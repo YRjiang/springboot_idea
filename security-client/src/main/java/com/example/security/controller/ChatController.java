@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.security.utils.HttpUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,12 +17,14 @@ public class ChatController {
 
     public final static String appId = "wx711b69a87a980f8a";
     public final static String appSecret = "0c3ea423046e73b0ffe0b0dcd74884b5";
-    public final static String serviceUrl = "";
+    public final static String DNS = "http://26bx171805.wicp.vip:33260";
 
     @RequestMapping("/chat")
     public void login(HttpServletResponse response) throws IOException {
 
-        String path = serviceUrl + "invoke";
+        // wei
+        String path = DNS + "/invoke";
+        System.out.println("回调路径： " + path);
 
         try {
             path = URLEncoder.encode(path, "UTF-8");
@@ -40,8 +43,9 @@ public class ChatController {
         response.sendRedirect(url);
     }
 
-    @RequestMapping("invoke")
-    public void oauthInvoke(HttpServletRequest request) {
+    @RequestMapping("/invoke")
+    @ResponseBody
+    public String oauthInvoke(HttpServletRequest request) {
         // 2.获得code
         String code = request.getParameter("code");
         String state = request.getParameter("state");
@@ -74,6 +78,14 @@ public class ChatController {
         JSONObject getDataObject = HttpUtil.httpRequest(getDataUrl, "GET", null);
         System.out.println(getDataObject.toString());
 
+        return getDataObject.toString();
+
+    }
+
+    @RequestMapping("/test")
+    public String test(HttpServletRequest request) {
+        System.out.println("成功调用");
+        return "成功调用";
     }
 
 

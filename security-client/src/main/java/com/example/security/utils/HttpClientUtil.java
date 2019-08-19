@@ -73,6 +73,7 @@ public class HttpClientUtil{
             post.addHeader("Authorization", Authorization);
         }
         post.setEntity(entity);
+        // post.setEntity(new StringEntity(paramStr, Charset.forName("UTF-8"))); // 此方法是将 String 直接转 Entity 再 setEntity
         try {
             HttpClient client = HttpClientBuilder.create().build();
             HttpResponse response = client.execute(post);

@@ -105,6 +105,13 @@
             <version>2.9.2</version>
         </dependency>
 
+        <!-- httpclient 工具类 -->
+        <dependency>
+            <groupId>com.arronlong</groupId>
+            <artifactId>httpclientutil</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -10,7 +10,7 @@ public class PdfDecoderTest {
 
     @Test
     public void baseTest(){
-        // pdf 转 base64
+        /*// pdf 转 base64
         long timeMillis1 = System.currentTimeMillis();
         File file = new File("D://1.pdf");
         String pdfToBase64 = PDFToBase64(file);
@@ -22,7 +22,7 @@ public class PdfDecoderTest {
 
         // base64 转 pdf
         base64StringToPdf(pdfToBase64,"D://pdf2.pdf");
-        System.out.println(System.currentTimeMillis() - timeMillis2);
+        System.out.println(System.currentTimeMillis() - timeMillis2);*/
 
     }
 

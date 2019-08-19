@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.0.0/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>欢迎登入</title>
+</head>
+<body>
+
+<div>
+
+</div>
+
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script th:inline="javascript">
+
+    $(function () {
+        $(".btn").click(function () {
+            alert("删除功能完善中...");
+        });
+
+        $(".commit").click(function () {
+            var username = $('#username').val();
+            var mobile = $('#mobile').val();
+            var fd = new FormData();
+            fd.append("username", username);
+            fd.append("mobile", mobile);
+            $.ajax({
+                url: '/userinfo/insert',
+                type: 'post',
+                processData: false,
+                contentType: false,
+                data: fd,
+                dataType: 'json',
+                success: function (data) {
+                    alert('添加失败！');
+                    if(data) {
+                        info('<strong>媒体添加成功</strong>');
+                        alert('学会了,真聪明');
+                    } else {
+                        info('<strong>媒体添加失败</strong>');
+                        alert('添加失败！');
+                    }
+                }
+            })
+        });
+
+    });
+
+</script>
+</body>
+</html>

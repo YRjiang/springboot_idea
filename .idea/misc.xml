@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/learning-war" />
     <file type="web" url="file://$PROJECT_DIR$/webapp" />
   </component>
   <component name="MavenProjectsManager">
@@ -17,6 +18,7 @@
         <option value="$PROJECT_DIR$/eureka-service02/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-hystrix/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-consume-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/httpclientutil-master/pom.xml" />
       </list>
     </option>
   </component>
