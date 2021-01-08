@@ -22,6 +22,8 @@
             2. ElasticsearchTemplate 操作 ES
             3. 编写 ElasticsearchRepository 子接口操作 ES
 
+5. elasticsearch (high-level-client)
+
 
 
 

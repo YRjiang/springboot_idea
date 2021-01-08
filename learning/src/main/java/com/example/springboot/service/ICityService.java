@@ -3,6 +3,8 @@ package com.example.springboot.service;
 
 import com.example.springboot.model.City;
 
+import java.util.List;
+
 /**
  * 城市业务逻辑接口类
  *
@@ -26,5 +28,5 @@ public interface ICityService {
 
     public void insertCity(City city);
 
-    public City findAllCity();
+    public List<City> findAllCity();
 }

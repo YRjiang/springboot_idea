@@ -29,3 +29,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 # mybatis对应的实体类
   type-aliases-package: com.example.security.model
+
+business:
+  oauth2:
+    grant_type: password
+    client_id: client
+    client_secret: secret
+
+

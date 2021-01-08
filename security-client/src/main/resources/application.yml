@@ -64,3 +64,11 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
 
+business:
+  oauth2:
+    grant_type: password
+    client_id: client
+    client_secret: secret
+
+
+

@@ -3,6 +3,8 @@ package com.example.springboot.mapper;
 import com.example.springboot.model.City;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * 城市 DAO 接口类
  *
@@ -32,5 +34,5 @@ public interface CityMapper {
     public void insertCity(City city);
 
     @Select("select * from city")
-    public City findAllCity();
+    public List<City> findAllCity();
 }

@@ -34,6 +34,7 @@ public class CityRestController {
     }
 
     @GetMapping(value = "/getCity/{id}")
+    @ResponseBody // 没有这个注解, 无法返回 json 数据
     public City getCity(@PathVariable Integer id){
         System.out.print("查询城市, id: " + id);
         return cityService.findCityById(id);
@@ -43,12 +44,36 @@ public class CityRestController {
     @ResponseBody
     public City findOneCity(@PathVariable Integer id) {//@RequestParam(value = "cityName", required = true) String userName
         System.out.print("查询城市, id: " + id);
+        long startTime = System.currentTimeMillis();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.print("耗时: " + (endTime - startTime));
         return cityService.getCityById(id);
     }
 
+    @GetMapping(value = "/getAllCity")
+    @ResponseBody
+    public List<City> getAllCity() {
+        List<City> cityList = cityService.findAllCity();
+        return cityList;
+    }
+
     @RequestMapping(value = "/updateCity", method = RequestMethod.GET)
+    @ResponseBody
     public City updateCity(City city){
         System.out.print("更新城市: " + city.toString());
+        long startTime = System.currentTimeMillis();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.print("耗时: " + (endTime - startTime));
         cityService.updateCityById(city);
         return city;
     }

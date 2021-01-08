@@ -6,6 +6,8 @@ import com.example.springboot.service.ICityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 城市业务逻辑实现类
  *
@@ -47,7 +49,7 @@ public class CityServiceImpl implements ICityService {
     }
 
     @Override
-    public City findAllCity() {
+    public List<City> findAllCity() {
         return cityMapper.findAllCity();
     }
 
