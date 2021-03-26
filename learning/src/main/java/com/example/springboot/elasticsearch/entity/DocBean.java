@@ -1,6 +1,6 @@
 package com.example.springboot.elasticsearch.entity;
 
-import lombok.Data;
+/*import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
@@ -36,4 +36,4 @@ public class DocBean {
         this.content = content;
         this.type = type;
     }
-}
+}*/

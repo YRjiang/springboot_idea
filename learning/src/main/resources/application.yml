@@ -48,7 +48,11 @@ spring:
         suffix: .html
         encoding: UTF-8
         mode: HTML
-
+#    data:
+#        elasticsearch:
+#            cluster-nodes: localhost:9200
+#            repositories:
+#                enabled: true
 server:
     port: 8011
 #server.session.timeout=10

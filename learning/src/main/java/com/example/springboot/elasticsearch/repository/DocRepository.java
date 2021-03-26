@@ -1,6 +1,6 @@
 package com.example.springboot.elasticsearch.repository;
 
-import com.example.springboot.elasticsearch.entity.DocBean;
+/*import com.example.springboot.elasticsearch.entity.DocBean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -18,4 +18,4 @@ public interface DocRepository extends ElasticsearchRepository<DocBean, String> 
     @Query("{\"bool\" : {\"must\" : {\"field\" : {\"secordCode.keyword\" : \"?\"}}}}")
     Page<DocBean> findBySecordCode(String secordCode, Pageable pageable);
 
-}
+}*/

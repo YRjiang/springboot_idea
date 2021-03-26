@@ -1,6 +1,6 @@
 package com.example.springboot.elasticsearch.service;
 
-import com.example.springboot.elasticsearch.entity.DocBean;
+/*import com.example.springboot.elasticsearch.entity.DocBean;
 import org.springframework.data.domain.Page;
 
 import java.util.Iterator;
@@ -26,4 +26,4 @@ public interface IElasticService {
 
     Page<DocBean> query(String key);
 
-}
+}*/

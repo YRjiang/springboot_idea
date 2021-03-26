@@ -1,6 +1,6 @@
 package com.example.springboot.elasticsearch.service.impl;
 
-import com.example.springboot.elasticsearch.entity.DocBean;
+/*import com.example.springboot.elasticsearch.entity.DocBean;
 import com.example.springboot.elasticsearch.repository.DocRepository;
 import com.example.springboot.elasticsearch.service.IElasticService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +8,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
 import java.util.List;
 
+@Service
 public class ElasticServiceImpl implements IElasticService {
 
     @Autowired
@@ -67,4 +69,4 @@ public class ElasticServiceImpl implements IElasticService {
         return repository.findByContent(key,pageable);
     }
 
-}
+}*/

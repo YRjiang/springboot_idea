@@ -1,7 +1,7 @@
 package com.example.springboot.elasticsearch.controller;
 
 
-import com.example.springboot.elasticsearch.entity.DocBean;
+/*import com.example.springboot.elasticsearch.entity.DocBean;
 import com.example.springboot.elasticsearch.repository.DocRepository;
 import com.example.springboot.elasticsearch.service.IElasticService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ import java.util.Map;
 @RequestMapping(("/elasticsearch"))
 public class ElasticsearchController {
 
-    /**
+    *//**
      * Elasticsearch是一个基于Lucene的搜索服务器。
      * 它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。
      *
      *
-     */
+     *//*
 
     //@Autowired
     //private ElasticsearchRestTemplate elasticsearchRestTemplate;
@@ -70,4 +70,4 @@ public class ElasticsearchController {
         return elasticService.findAll();
     }
 
-}
+}*/
